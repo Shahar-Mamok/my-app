@@ -1,5 +1,6 @@
 // Implemation detail
 const conversation = new Map<string, string>();
+let lastResponseId: string | null = null;
 
 export const conversationRepository = {
    getLastResponseId(conversationId: string) {

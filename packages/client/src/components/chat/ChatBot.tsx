@@ -5,6 +5,14 @@ import type { Message } from './ChatMessages';
 import ChatMessages from './ChatMessages';
 import type { ChatFormData } from './ChatInput';
 import ChatInput from './ChatInput';
+import popSound from '@/assets/sounds/pop.mp3';
+import notificationSound from '@/assets/sounds/notification.mp3';
+
+const popAudio = new Audio(popSound);
+popAudio.volume = 0.2;
+
+const notificationAudio = new Audio(notificationSound);
+notificationAudio.volume = 0.2;
 
 type ChatResponse = {
    message: string;
@@ -21,11 +29,13 @@ const ChatBot = () => {
          setMessages((prev) => [...prev, { role: 'user', content: prompt }]);
          setIsBotTyping(true);
          setError('');
+         popAudio.play();
 
          const { data } = await axios.post<ChatResponse>('/api/chat', {
             prompt,
             conversationId: conversationId.current,
          });
+         notificationAudio.play();
          setMessages((prev) => [
             ...prev,
             { role: 'bot', content: data.message },

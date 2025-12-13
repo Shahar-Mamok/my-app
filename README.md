@@ -6,17 +6,27 @@
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
 
-Welcome to the **WonderWorld Chatbot** project! This is a full-stack application designed to provide an interactive AI assistant for **WonderWorld**, a magical theme park. The chatbot helps guests with information about tickets, attractions, park hours, dining options, and accommodation.
+Welcome to the **Business Chatbot Template** project! While currently configured for **WonderWorld** (a magical theme park example), this is a flexible full-stack application designed to be easily adapted for any business. The chatbot helps guests with information about products, services, hours, and more.
+
+> 💡 **Note**: WonderWorld is just a demonstration context. You can easily feed this chatbot your own business data!
 
 ## 🌟 What This Project Does
 
-This application serves as a comprehensive assistance interface for WonderWorld guests. It combines a modern, responsive web client with a fast, intelligent backend service to answer user queries in natural language.
+This application serves as a comprehensive assistance interface. It combines a modern, responsive web client with a fast, intelligent backend service to answer user queries in natural language based on provided context.
 
 The system is designed to:
 
-- Provide real-time information about WonderWorld (rides, prices, hours).
-- Assist users in planning their trip (hotels, dining).
+- Be efficiently retargeted to any business domain by updating the knowledge base.
+- Provide real-time information based on your data.
 - Answer questions using context-aware AI (powered by OpenAI).
+
+## 🔄 Adapting for Your Business
+
+WonderWorld is just a placeholder. To use this for your own business:
+
+1. Open `packages/server/prompts/WonderWorld.md`.
+2. Replace the content with your own business information (FAQs, pricing, services, etc.).
+3. The chatbot will immediately start answering questions based on your new data!
 
 ## 🚀 Key Features
 
@@ -47,7 +57,7 @@ Follow these steps to get the project running locally.
 1. **Clone the repository**:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Shahar-Mamok/my-app.git
    cd my-app
    ```
 

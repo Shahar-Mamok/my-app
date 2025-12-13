@@ -47,7 +47,7 @@ Follow these steps to get the project running locally.
 1. **Clone the repository**:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Shahar-Mamok/my-app.git
    cd my-app
    ```
 

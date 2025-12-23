@@ -1,10 +1,6 @@
-import OpenAI from 'openai';
 import { type Review } from '../generated/prisma';
 import { reviewRepository } from '../repositories/review.repository';
-
-const client = new OpenAI({
-   apiKey: process.env.OPENAI_API_KEY,
-});
+import { llmClient } from '../llm/client';
 
 export const reviewService = {
    async getReviews(productId: number): Promise<Review[]> {
@@ -18,13 +14,12 @@ export const reviewService = {
       Summarize the following customer reviews into a short paragraph
       highlighting key themes, both positive and negative:
       ${joinedReviews}`;
-      const response = await client.responses.create({
+      const response = await llmClient.generateText({
          model: 'gpt-4o-mini',
-         input: prompt,
+         prompt,
          temperature: 0.2,
-         max_output_tokens: 500,
+         max_tokens: 500,
       });
-      const summary = response.output_text;
-      return summary;
+      return response.text;
    },
 };

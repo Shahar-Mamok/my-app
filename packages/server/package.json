@@ -5,16 +5,20 @@
    "private": true,
    "scripts": {
       "start": "bun run index.ts",
-      "dev": "bun --watch run index.ts"
+      "dev": "bun --watch run index.ts",
+      "migrate": "prisma migrate dev"
    },
    "devDependencies": {
       "@types/bun": "latest",
-      "@types/express": "^5.0.5"
+      "@types/express": "^5.0.5",
+      "prisma": "6"
    },
    "peerDependencies": {
       "typescript": "^5"
    },
    "dependencies": {
+      "@prisma/client": "6",
+      "dayjs": "^1.11.19",
       "dotenv": "^17.2.3",
       "express": "^5.1.0",
       "openai": "^6.9.1",

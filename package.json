@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "bun run index.ts",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "db:migrate": "bun run --filter server migrate"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -14,7 +15,8 @@
     "currently": "^0.0.8",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "prettier": "^3.7.4"
+    "prettier": "^3.7.4",
+    "prisma": "^7.1.0"
   },
   "peerDependencies": {
     "typescript": "^5"
